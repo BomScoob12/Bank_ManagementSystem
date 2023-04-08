@@ -1,44 +1,37 @@
 package bank;
 
-import customer.Customer;
+import accounts.CurrentAccount;
+import accounts.FixedDepositAccount;
+import accounts.SavingAccount;
+import admin.Admin;
+import accounts.Person;
 
 import java.util.List;
 
 public interface Bank {
-    // Create
-    boolean add(Customer customer);
-    boolean add(Employee employee);
-    boolean add(Account account);
-    boolean add(Loan loan);
+    //add new account
+    boolean add(CurrentAccount currentAccount);
+    boolean add(SavingAccount savingAccount);
+    boolean add(FixedDepositAccount fixedDepositAccount);
+    boolean add(Admin admin);
     boolean add(Branch branch);
-
     boolean add(Transaction transaction);
 
-    // Read
-    List<Customer>findAllCustomers();
-    Customer findCustomer(String param);
+    //rename or something
+    boolean update(Admin admin);
 
-    List<Employee>findAllEmployees();
-    Employee findEmployee(String param);
-
-    List<Account>findAccountsOfCustomer();
-    List<Loan>findLoansOfCustomer();
-
-    List<Transaction> findTransactionsOfAccount();
-    List<Transaction> findTransactionsOfCustomer();
-    String getTransactionDetails();
-
-    // Update
-    boolean update(Customer customer);
-    boolean update(Employee employee);
-    boolean update(Account account);
-    boolean update(Loan loan);
-    boolean update(Branch branch);
-
-    // Delete
-    boolean delete(Customer customer);
-    boolean delete(Employee employee);
-    boolean delete(Account account);
-    boolean delete(Loan loan);
+    //delete object
+    boolean delete(Person person);
+    boolean delete(Admin admin);
     boolean delete(Branch branch);
+    boolean delete(Transaction transaction);
+
+    //customer
+    boolean withdraw(double amount);
+    boolean desposit(double amount);
+
+    List<Person> findAccountCustomer(int id);
+    List<Person> findAccountCustomer(String firstname, String lastname);
+    List<Person> listAllAccount();
+    String viewTransaction();
 }

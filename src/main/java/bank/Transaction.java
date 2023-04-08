@@ -1,4 +1,4 @@
 package bank;
 
-public class Transaction {
+public class Transaction { //for each person.
 }
