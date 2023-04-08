@@ -1,4 +1,4 @@
 package accounts;
 
-public class FixedDepositAccount extends Person {
+public class FixedDepositAccount extends Customer {
 }

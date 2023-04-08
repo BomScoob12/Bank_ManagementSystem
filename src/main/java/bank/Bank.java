@@ -4,7 +4,7 @@ import accounts.CurrentAccount;
 import accounts.FixedDepositAccount;
 import accounts.SavingAccount;
 import admin.Admin;
-import accounts.Person;
+import accounts.Customer;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface Bank {
     boolean update(Admin admin);
 
     //delete object
-    boolean delete(Person person);
+    boolean delete(Customer customer);
     boolean delete(Admin admin);
     boolean delete(Branch branch);
     boolean delete(Transaction transaction);
@@ -30,8 +30,8 @@ public interface Bank {
     boolean withdraw(double amount);
     boolean desposit(double amount);
 
-    List<Person> findAccountCustomer(int id);
-    List<Person> findAccountCustomer(String firstname, String lastname);
-    List<Person> listAllAccount();
+    List<Customer> findAccountCustomer(int id);
+    List<Customer> findAccountCustomer(String firstname, String lastname);
+    List<Customer> listAllAccount();
     String viewTransaction();
 }
