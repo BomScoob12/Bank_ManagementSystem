@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Customer {
+public class Customer {
     private List<Account> accounts;
     private final String idCard;
     private String firstname;
