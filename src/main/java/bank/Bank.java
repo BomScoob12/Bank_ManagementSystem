@@ -1,35 +1,33 @@
 package bank;
 
-import accounts.CurrentAccount;
-import accounts.FixedDepositAccount;
-import accounts.SavingAccount;
-import admin.Admin;
+import accounts.Account;
 import accounts.Customer;
+import admin.Employee;
 
+import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public interface Bank {
     //add new account
-    boolean add(CurrentAccount currentAccount);
-    boolean add(SavingAccount savingAccount);
-    boolean add(FixedDepositAccount fixedDepositAccount);
-    boolean add(Admin admin);
+    boolean add(Customer customer);
+    boolean add(Employee employee);
+    boolean add(Account account);
     boolean add(Branch branch);
     boolean add(Transaction transaction);
 
-    //rename or something
-    boolean update(Admin admin);
+    //update account
+    boolean update(Customer customer);
+    boolean update(Employee employee);
+    boolean update(Account account);
+    boolean update(Branch branch);
 
-    //delete object
+    //delete account
     boolean delete(Customer customer);
-    boolean delete(Admin admin);
+    boolean delete(Employee employee);
     boolean delete(Branch branch);
     boolean delete(Transaction transaction);
 
-    //customer
-    boolean withdraw(double amount);
-    boolean desposit(double amount);
-
+    //read data
     List<Customer> findAccountCustomer(int id);
     List<Customer> findAccountCustomer(String firstname, String lastname);
     List<Customer> listAllAccount();

@@ -51,4 +51,25 @@ public abstract class Customer {
     private boolean checkId(String idCard) {
         return idCard.length() == 10 && !idCard.isBlank();
     }
+
+    public boolean add(Account account){
+        if (account == null) return false;
+        accounts.add(account);
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "accounts=" + accounts +
+                ", idCard='" + idCard + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", userId='" + userId + '\'' +
+                ", password='" + password + '\'' +
+                ", registerDate=" + registerDate +
+                '}';
+    }
 }
