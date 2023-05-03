@@ -1,9 +1,13 @@
 package accounts;
 
 import bank.Branch;
+import bank.Transaction;
+import person.Customer;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Account {
     private int id;
@@ -29,5 +33,8 @@ public class Account {
         return false;
     }
 
+    List<Transaction> viewTransaction(){
+        return new ArrayList<>();
+    }
 
 }

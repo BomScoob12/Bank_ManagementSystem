@@ -1,4 +1,4 @@
-package accounts;
+package person;
 
 import java.util.Date;
 import java.util.Objects;
@@ -25,21 +25,6 @@ public abstract class Person {
         this.lastname = Objects.requireNonNull(lastname, "Lastname is required");
         this.phone = phone;
         this.email = email;
-        this.registerDate = registerDate;
-
-        this.userId = userId;
-        this.password = password;
-    }
-    public Person(String idCard, String firstname, String lastname, String phone, Date registerDate, String userId, String password){
-        if (checkId(idCard)){
-            this.idCard = idCard;
-        } else {
-            throw new IllegalArgumentException("Invalid ID cards or ID cards less than 10 digits.");
-        }
-        this.firstname = Objects.requireNonNull(firstname, "Firstname is required");
-        this.lastname = Objects.requireNonNull(lastname, "Lastname is required");
-        this.phone = phone;
-        this.email = null;
         this.registerDate = registerDate;
 
         this.userId = userId;

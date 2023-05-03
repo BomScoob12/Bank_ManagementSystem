@@ -1,10 +1,9 @@
 package bank;
 
 import accounts.Account;
-import accounts.Customer;
-import admin.Employee;
+import person.Customer;
+import person.Employee;
 
-import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public interface Bank {
@@ -28,8 +27,15 @@ public interface Bank {
     boolean delete(Transaction transaction);
 
     //read data
-    List<Customer> findAccountCustomer(int id);
-    List<Customer> findAccountCustomer(String firstname, String lastname);
-    List<Customer> listAllAccount();
-    String viewTransaction();
+    List<Customer>findAllCustomers();
+    Customer findCustomer(String name);
+    Customer findCustomer(String firstname, String lastname);
+    Customer findCustomerByIdCard(String idCard);
+    List<Employee>findAllEmployees();
+    Employee findEmployee(String name);
+    List<Account>findAccountsOfCustomer();
+
+    List<Transaction> findTransactionsOfAccount();
+    List<Transaction> findTransactionsOfCustomer();
+    String getTransactionDetails();
 }
