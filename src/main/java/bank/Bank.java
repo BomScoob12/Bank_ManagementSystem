@@ -1,9 +1,8 @@
 package bank;
 
 import accounts.Account;
-import Person.Customer;
-import Person.Employee;
-import accounts.Transaction;
+import person.Customer;
+import person.Employee;
 
 import java.util.List;
 
