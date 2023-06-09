@@ -1,41 +1,93 @@
-<<<<<<<< HEAD:src/main/java/person/Person.java
 package person;
-========
-package Person;
->>>>>>>> 536c262f6e8d3c61f225588b32dbea519501561f:src/main/java/Person/Person.java
 
-import java.util.Date;
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 public abstract class Person {
-    private final String idCard;
+    private final String id;
     private String firstname;
     private String lastname;
-    private String phone;
+    private String contactNumber;
     private String email;
+    private String address;
+    private final LocalDateTime registerDate;
 
-    private String userId;
-    private String password;
+    //username and password (password should be hash before store into database)
+    private String username;
+    private String passhash;
 
-    private Date registerDate;
-
-    public Person(String idCard, String firstname, String lastname, String phone, String email, Date registerDate, String userId, String password){
-        if (checkId(idCard)){
-            this.idCard = idCard;
-        } else {
-            throw new IllegalArgumentException("Invalid ID cards or ID cards less than 10 digits.");
-        }
-        this.firstname = Objects.requireNonNull(firstname, "Firstname is required");
-        this.lastname = Objects.requireNonNull(lastname, "Lastname is required");
-        this.phone = phone;
+    public Person(String id, String firstname, String lastname, String contactNumber, String email, String address, LocalDateTime registerDate, String username, String passhash) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.contactNumber = contactNumber;
         this.email = email;
+        this.address = address;
         this.registerDate = registerDate;
-
-        this.userId = userId;
-        this.password = password;
+        this.username = username;
+        this.passhash = passhash;
     }
 
-    private boolean checkId(String idCard) {
-        return idCard.length() == 10 && !idCard.isBlank();
+    public String getId() {
+        return id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public LocalDateTime getRegisterDate() {
+        return registerDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPasshash() {
+        return passhash;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPasshash(String passhash) {
+        this.passhash = passhash;
     }
 }

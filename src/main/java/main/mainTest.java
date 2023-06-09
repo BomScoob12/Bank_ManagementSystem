@@ -1,10 +1,5 @@
 package main;
 
-import accounts.Account;
-import accounts.CurrentAccount;
-import person.Customer;
-
-import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,17 +7,21 @@ public class mainTest {
 
     static Scanner scan;
     public static void main(String[] args) {
-
+        scan = new Scanner(System.in);
         while(true){
             System.out.println("Test_Method");
             System.out.println("Type 0 to exit.");
-            System.out.println("1.testOpen account");
+            System.out.println("1.test Open account");
             int option = scan.nextInt();
             scan.nextLine();
             switch (option){
                 case (1) -> {
                     testOpeningAccount();
                 }
+                case (0) -> {
+                    System.exit(0);
+                }
+                default -> {}
             }
         }
     }
@@ -37,9 +36,10 @@ public class mainTest {
         int accType = scan.nextInt();
         scan.nextLine();
         switch (accType){
-            case (1) -> {
-                Account account = new CurrentAccount(randomID(), new Customer(), LocalDateTime.now(), 1000, 0.5);
-            }
+//            case (1) -> {
+//                LocalDateTime time = LocalDateTime.now();
+//                Account account = new CurrentAccount(randomID(), new Customer(), time, BigDecimal.valueOf(1000), BigDecimal.valueOf(0.5));
+//            }
         }
 
     }

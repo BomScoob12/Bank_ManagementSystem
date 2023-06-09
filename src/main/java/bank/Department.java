@@ -1,0 +1,12 @@
+package bank;
+
+public enum Department {
+    BANK_MANAGER,
+    ACCOUNTING_MANAGER,
+    MARKETING_AND_SALE,
+    HUMAN_RESOURCES,
+    RISK_MANAGER,
+    SECURITY,
+    FINANCIAL_ADVISOR,
+    BANK_TELLER
+}
