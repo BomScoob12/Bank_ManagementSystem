@@ -25,6 +25,7 @@ public abstract class Person {
         this.registerDate = registerDate;
         this.username = username;
         this.passhash = passhash;
+        this.passhash.hashCode();
     }
 
     public String getId() {

@@ -2,9 +2,10 @@ package bank;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.UUID;
 
 public class Transaction {
-    private final int transactionId;
+    private final UUID transactionId;
     private final int accountId;
     private final Timestamp time;
     private TransactionType transactionType;
@@ -14,7 +15,7 @@ public class Transaction {
     private String status;
     private String description;
 
-    public Transaction(int transactionId, int accountId, Timestamp time, TransactionType transactionType, BigDecimal amount, int sourceAccountId, int destinationAccountId, String status, String description) {
+    public Transaction(UUID transactionId, int accountId, Timestamp time, TransactionType transactionType, BigDecimal amount, int sourceAccountId, int destinationAccountId, String status, String description) {
         this.transactionId = transactionId;
         this.accountId = accountId;
         this.time = time;
@@ -26,7 +27,7 @@ public class Transaction {
         this.description = description;
     }
 
-    public int getTransactionId() {
+    public UUID getTransactionId() {
         return transactionId;
     }
 
